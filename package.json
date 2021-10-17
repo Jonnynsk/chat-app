@@ -47,7 +47,7 @@
 		"@commitlint/config-conventional": "^13.2.0",
 		"@typescript-eslint/eslint-plugin": "^5.0.0",
 		"@typescript-eslint/parser": "^5.0.0",
-		"eslint": "7.2.0",
+		"eslint": "7.11.0",
 		"eslint-config-airbnb": "18.2.1",
 		"eslint-config-airbnb-typescript": "^14.0.1",
 		"eslint-config-prettier": "^8.3.0",
@@ -62,8 +62,8 @@
 	},
 	"lint-staged": {
 		"src/**/*.{ts,tsx}": [
-		  "yarn prettier",
-		  "yarn lint"
+			"yarn prettier",
+			"yarn lint"
 		]
-	  }
+	}
 }
