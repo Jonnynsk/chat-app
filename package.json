@@ -60,6 +60,7 @@
 		"husky": "^7.0.2",
 		"lint-staged": "^11.2.3",
 		"prettier": "^2.4.1",
+		"react-hook-form": "^7.17.4",
 		"sass": "^1.43.2"
 	},
 	"lint-staged": {

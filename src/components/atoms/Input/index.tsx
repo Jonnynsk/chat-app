@@ -7,7 +7,7 @@ interface InputProps {
 	placeholder: string
 }
 
-const Input: FC<InputProps> = (props: InputProps) => {
+const Input: FC<InputProps> = props => {
 	return (
 		<div>
 			<input {...props} className='input' />
