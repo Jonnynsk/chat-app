@@ -10,21 +10,32 @@ interface DataProps {
 }
 
 const LoginForm: FC = () => {
-	const { register, handleSubmit } = useForm<DataProps>()
-	const onSubmit: SubmitHandler<DataProps> = data => console.log(data)
+	const {
+		register,
+		handleSubmit,
+		formState: { errors },
+	} = useForm<DataProps>()
+	const formSubmit: SubmitHandler<DataProps> = (data: DataProps) =>
+		console.log(data)
 
 	return (
-		<form onSubmit={handleSubmit(onSubmit)}>
+		<form onSubmit={handleSubmit(formSubmit)}>
 			<Input
 				type='text'
 				placeholder='Input user name'
-				{...register('user')}
+				label='user'
+				register={register}
+				required
 			/>
+			{errors.user && <span>Something goes wrong</span>}
 			<Input
 				type='password'
 				placeholder='Input password'
-				{...register('password')}
+				label='password'
+				register={register}
+				required
 			/>
+			{errors.password && <span>Something goes wrong</span>}
 			<Button type='submit'>Log in</Button>
 		</form>
 	)
