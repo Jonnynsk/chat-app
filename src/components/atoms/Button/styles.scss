@@ -11,4 +11,11 @@
 
 	margin-top: 55px;
 	margin-left: 55px;
+	
+	&:hover {
+		background-color: $hover-blue;
+	}
+	&:active {
+		background-color: $press-blue;
+	}
 }

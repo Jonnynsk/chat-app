@@ -11,4 +11,8 @@
 	
 	margin-top: 55px;
 	margin-left: 55px;
+
+	&:focus {
+		border: 1px solid $main-blue;
+	}
 }

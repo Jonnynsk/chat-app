@@ -15,7 +15,11 @@ const LoginForm: FC = () => {
 
 	return (
 		<form onSubmit={handleSubmit(onSubmit)}>
-			<Input type='text' placeholder='Input user name' {...register('user')} />
+			<Input
+				type='text'
+				placeholder='Input user name'
+				{...register('user')}
+			/>
 			<Input
 				type='password'
 				placeholder='Input password'

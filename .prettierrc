@@ -4,5 +4,6 @@
 	"tabWidth": 2,
 	"semi": false,
 	"jsxSingleQuote": true,
-	"arrowParens": "avoid"
+	"arrowParens": "avoid",
+	"printWidth": 70
 }
