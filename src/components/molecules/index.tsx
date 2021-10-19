@@ -3,11 +3,7 @@ import { useForm, SubmitHandler } from 'react-hook-form'
 
 import Button from '../atoms/Button'
 import Input from '../atoms/Input'
-
-interface DataProps {
-	user: string
-	password: string
-}
+import { DataProps } from '../../models/DataProps'
 
 const LoginForm: FC = () => {
 	const {

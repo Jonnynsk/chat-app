@@ -3,10 +3,7 @@ import { Path, UseFormRegister } from 'react-hook-form'
 
 import './styles.scss'
 
-interface DataProps {
-	user: string
-	password: string
-}
+import { DataProps } from '../../../models/DataProps'
 
 interface InputProps {
 	type: string
