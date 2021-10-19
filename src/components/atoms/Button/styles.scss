@@ -1,0 +1,14 @@
+@import '../../../assets/styles/index.scss';
+
+.button {
+    @include size(233px, 56px);
+	@include font(15px, 500, 23px);
+    color: $main-white;
+    border: none;
+    border-radius: 8px;
+    background-color: $main-blue;
+    cursor: pointer;
+    
+    margin-top: 55px;
+    margin-left: 55px;
+}

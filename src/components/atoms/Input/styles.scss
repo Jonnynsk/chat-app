@@ -3,11 +3,12 @@
 .input {
 	@include size(354px, 56px);
 	@include font(15px, 400, 23px);
-	color: $placeholder;
+	color: $main-text;
 	border: 1px solid $border-blue;
 	border-radius: 8px;
 	outline: none;
 	padding-left: 16px;
-    margin-top: 55px;
-    margin-left: 55px;
+	
+	margin-top: 55px;
+	margin-left: 55px;
 }

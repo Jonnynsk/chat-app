@@ -8,17 +8,17 @@
 }
 
 input::-webkit-input-placeholder { color: #9F9F9F; }
-input::-moz-placeholder { color: red; }
+input::-moz-placeholder { color: #9F9F9F; }
 
 // colors
 
 $backgound: #e5e5e5;
 $backgound-chat: #eff5ff;
+$main-white: #FFFFFF;
 $main-text: #333333;
 $chat-text: #303030;
 $main-blue: #5c98f1;
 $border-blue: #B3CDF8;
-$placeholder: #9F9F9F;
 
 // mixins
 

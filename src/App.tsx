@@ -1,12 +1,11 @@
 import { FC } from 'react'
 
-import Input from './components/atoms/Input'
+import LoginForm from './components/molecules'
 
 const App: FC = () => {
 	return (
 		<div className='App'>
-			<Input type='text' placeholder='Input user name' />
-			<Input type='text' placeholder='Input password' />
+			<LoginForm />
 		</div>
 	)
 }
