@@ -1,9 +1,14 @@
 import { FC } from 'react'
 
-import './App.scss'
+import Input from './components/atoms/Input'
 
 const App: FC = () => {
-	return <div className='App'></div>
+	return (
+		<div className='App'>
+			<Input type='text' placeholder='Input user name' />
+			<Input type='text' placeholder='Input password' />
+		</div>
+	)
 }
 
 export default App
