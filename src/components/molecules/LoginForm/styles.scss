@@ -1,0 +1,22 @@
+@import '../../../assets/styles/index.scss';
+
+.error {
+	background-image: url('../../../assets/images/error.svg');
+	background-repeat: no-repeat;
+	background-position: right 16px center;
+	border: 1px solid $error;
+	&:focus {
+		border: 1px solid $error;
+	}
+}
+
+.type {
+	border: 1px solid $main-blue;
+}
+
+.error_message {
+	@include font(13px, 500, 19px);
+	color: $error;
+
+	margin-left: 55px;
+}

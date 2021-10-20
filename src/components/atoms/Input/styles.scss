@@ -1,6 +1,6 @@
 @import '../../../assets/styles/index.scss';
 
-.input {
+input {
 	@include size(354px, 56px);
 	@include font(15px, 400, 23px);
 	color: $main-text;
@@ -8,17 +8,15 @@
 	border-radius: 8px;
 	outline: none;
 	padding-left: 16px;
-	// background-image: url('../../../assets/images/error.svg');
-	// background-repeat: no-repeat;
-	// background-position: right 16px center;
 	
 	margin-top: 55px;
 	margin-left: 55px;
-
+	
+	&::placeholder {
+		@include font(15px, 400, 23px);
+		color: $placeholder;
+	}
 	&:focus {
 		border: 1px solid $main-blue;
-	}
-	&::placeholder {
-		color: $placeholder;
 	}
 }
