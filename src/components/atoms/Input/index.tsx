@@ -9,21 +9,14 @@ interface InputProps {
 	type: string
 	placeholder: string
 	register: UseFormRegister<DataProps>
-	required: boolean
 	label: Path<DataProps>
 }
 
-const Input: FC<InputProps> = ({
-	type,
-	placeholder,
-	register,
-	required,
-	label,
-}) => {
+const Input: FC<InputProps> = ({ type, placeholder, register, label }) => {
 	return (
 		<div>
 			<input
-				{...register(label, { required })}
+				{...register(label)}
 				type={type}
 				placeholder={placeholder}
 				className='input'
