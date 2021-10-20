@@ -7,9 +7,6 @@
 	font-family: 'Montserrat', sans-serif;
 }
 
-input::-webkit-input-placeholder { color: #9F9F9F; }
-input::-moz-placeholder { color: #9F9F9F; }
-
 // colors
 
 $backgound: #e5e5e5;
@@ -23,6 +20,7 @@ $press-blue: #2C6AC7;
 $border-blue: #B3CDF8;
 $inactive: #D1D1D1;
 $error: #FB6262;
+$placeholder: #9F9F9F;
 
 // mixins
 

@@ -1,6 +1,8 @@
 import { FC } from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 
+import './styles.scss'
+
 import Button from '../atoms/Button'
 import Input from '../atoms/Input'
 import { DataProps } from '../../models/DataProps'
@@ -11,8 +13,7 @@ const LoginForm: FC = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<DataProps>()
-	const formSubmit: SubmitHandler<DataProps> = (data: DataProps) =>
-		console.log(data)
+	const formSubmit: SubmitHandler<DataProps> = data => console.log(data)
 
 	return (
 		<form onSubmit={handleSubmit(formSubmit)}>
@@ -23,7 +24,9 @@ const LoginForm: FC = () => {
 				register={register}
 				required
 			/>
-			{errors.user && <span>Something goes wrong</span>}
+			<div className='error'>
+				{errors.user && <span>Something goes wrong</span>}
+			</div>
 			<Input
 				type='password'
 				placeholder='Input password'
@@ -31,7 +34,9 @@ const LoginForm: FC = () => {
 				register={register}
 				required
 			/>
-			{errors.password && <span>Something goes wrong</span>}
+			<div className='error'>
+				{errors.password && <span>Something goes wrong</span>}
+			</div>
 			<Button type='submit'>Log in</Button>
 		</form>
 	)
