@@ -1,0 +1,24 @@
+.chat_app {
+	display: grid;
+	height: 1080px;
+	grid-template-areas:
+		'h h'
+		's c';
+	grid-template-rows: 60px 1fr;
+	grid-template-columns: 2fr 10fr;
+	.header {
+		grid-area: h;
+	}
+	.sidebar {
+		grid-area: s;
+        width: 362px;
+        margin-top: 20px;
+        background-color: rebeccapurple;
+	}
+	.chat {
+		grid-area: c;
+        width: 1078px;
+        margin-top: 20px;
+        background-color: goldenrod;
+	}
+}

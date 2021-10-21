@@ -1,0 +1,12 @@
+.wrapper {
+    display: grid;
+    grid-template-areas: 
+    'log well';
+    grid-template-columns: 50% 50%;
+    .login {
+        grid-area: log;
+    }
+    .wellcome {
+        grid-area: well;
+    }
+}

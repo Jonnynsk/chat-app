@@ -1,0 +1,6 @@
+@import '../../../assets/styles/index.scss';
+
+.background {
+    @include size(724px, 1080px);
+    background-color: $backgound;
+}

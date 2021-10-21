@@ -1,13 +1,13 @@
 import { FC } from 'react'
 
-import Logo from './components/atoms/Logo'
-import LoginForm from './components/molecules/LoginForm'
+import LoginPage from './components/organisms/LoginPage'
+// import ChatPage from './components/organisms/ChatPage'
 
 const App: FC = () => {
 	return (
 		<div className='App'>
-			<Logo />
-			<LoginForm />
+			<LoginPage />
+			{/* <ChatPage /> */}
 		</div>
 	)
 }

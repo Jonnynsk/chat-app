@@ -1,0 +1,25 @@
+@import '../../../assets/styles/index.scss';
+
+header {
+    @include size(1440px, 80px);
+}
+
+.logo {
+	position: absolute;
+	width: 86px;
+	height: 32.85px;
+	left: 24px;
+	top: 23.73px;
+    cursor: pointer;
+}
+
+.auth {
+	position: absolute;
+	width: 48px;
+	height: 48px;
+	left: 1368px;
+	top: 16px;
+	box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.08);
+    border-radius: 50%;
+    cursor: pointer;
+}

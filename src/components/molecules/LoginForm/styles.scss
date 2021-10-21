@@ -1,5 +1,9 @@
 @import '../../../assets/styles/index.scss';
 
+form {
+	@include size(716px, 1080px);
+}
+
 .error {
 	background-image: url('../../../assets/images/error.svg');
 	background-repeat: no-repeat;
