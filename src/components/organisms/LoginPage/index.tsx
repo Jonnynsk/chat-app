@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
 import LoginForm from '../../molecules/LoginForm'
-import Wellcome from '../../molecules/Wellcome'
+import RightSide from '../../molecules/RightSide'
 
 import './styles.scss'
 
@@ -11,8 +11,8 @@ const LoginPage: FC = () => {
 			<div className='login'>
 				<LoginForm />
 			</div>
-			<div className='wellcome'>
-				<Wellcome />
+			<div className='right'>
+				<RightSide />
 			</div>
 		</div>
 	)

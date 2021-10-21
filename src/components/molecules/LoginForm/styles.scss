@@ -2,6 +2,11 @@
 
 form {
 	@include size(716px, 1080px);
+	position: absolute;
+	width: 354px;
+	height: 79px;
+	left: 121px;
+	top: 471px;
 }
 
 .error {

@@ -1,3 +1,5 @@
+@import '../../../assets/styles/index.scss';
+
 .chat_app {
 	display: grid;
 	height: 1080px;
@@ -13,12 +15,11 @@
 		grid-area: s;
         width: 362px;
         margin-top: 20px;
-        background-color: rebeccapurple;
 	}
 	.chat {
 		grid-area: c;
         width: 1078px;
         margin-top: 20px;
-        background-color: goldenrod;
+        background: $backgound;
 	}
 }

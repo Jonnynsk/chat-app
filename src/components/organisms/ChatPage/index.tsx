@@ -1,8 +1,9 @@
 import { FC } from 'react'
 
-import Header from '../../molecules/Header'
-
 import './styles.scss'
+
+import Header from '../../molecules/Header'
+import chatBack from '../../../assets/images/chatBack.svg'
 
 const ChatPage: FC = () => {
 	return (
@@ -10,8 +11,10 @@ const ChatPage: FC = () => {
 			<div className='header'>
 				<Header />
 			</div>
-			<div className='sidebar'>sidebar</div>
-			<div className='chat'>chat</div>
+			<div className='sidebar'></div>
+			<div className='chat'>
+				<img src={chatBack} />
+			</div>
 		</div>
 	)
 }

@@ -1,12 +1,13 @@
 import { FC } from 'react'
-import Logo from '../../atoms/Logo'
 
 import './styles.scss'
 
+import loginBack from '../../../assets/images/loginBack.svg'
+
 const Wellcome: FC = () => {
 	return (
-		<div>
-			<Logo />
+		<div className='background'>
+			<img src={loginBack} />
 		</div>
 	)
 }
