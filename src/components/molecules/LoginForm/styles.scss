@@ -4,23 +4,18 @@ form {
 	position: absolute;
 	left: 121px;
 	top: 471px;
-}
-
-.error {
-	background: url('../../../assets/images/error.svg') right 16px center no-repeat;
-	border: 1px solid $error;
-	&:focus {
+	.error {
+		background: url('../../../assets/images/error.svg') right 16px center
+			no-repeat;
 		border: 1px solid $error;
+		&:focus {
+			border: 1px solid $error;
+		}
 	}
-}
-
-.type {
-	border: 1px solid $main-blue;
-}
-
-.error_message {
-	@include font(13px, 500, 19px);
-	color: $error;
-	margin-left: 8px;
-	margin-top: 4px;
+	.error_message {
+		@include font(13px, 500, 19px);
+		color: $error;
+		margin-left: 8px;
+		margin-top: 4px;
+	}
 }

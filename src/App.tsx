@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-// import ChatPage from './components/templates/ChatPage'
 import LoginPage from './components/templates/LoginPage'
+// import ChatPage from './components/templates/ChatPage'
 
 const App: FC = () => {
 	return (
