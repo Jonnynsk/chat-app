@@ -1,18 +1,13 @@
 @import '../../../assets/styles/index.scss';
 
 form {
-	@include size(716px, 1080px);
 	position: absolute;
-	width: 354px;
-	height: 79px;
 	left: 121px;
 	top: 471px;
 }
 
 .error {
-	background-image: url('../../../assets/images/error.svg');
-	background-repeat: no-repeat;
-	background-position: right 16px center;
+	background: url('../../../assets/images/error.svg') right 16px center no-repeat;
 	border: 1px solid $error;
 	&:focus {
 		border: 1px solid $error;
@@ -26,6 +21,6 @@ form {
 .error_message {
 	@include font(13px, 500, 19px);
 	color: $error;
-
-	margin-left: 55px;
+	margin-left: 8px;
+	margin-top: 4px;
 }

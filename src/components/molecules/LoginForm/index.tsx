@@ -9,6 +9,7 @@ import './styles.scss'
 import Button from '../../atoms/Button'
 import Input from '../../atoms/Input'
 import { DataProps } from '../../../models/DataProps'
+import Label from '../../atoms/Label'
 
 const scheme = yup.object().shape({
 	user: yup.string().required('Something goes wrong'),
@@ -25,6 +26,7 @@ const LoginForm: FC = () => {
 
 	return (
 		<form onSubmit={handleSubmit(formSubmit)}>
+			<Label label='User name' />
 			<Input
 				type='text'
 				placeholder='Input user name'
@@ -33,6 +35,7 @@ const LoginForm: FC = () => {
 				className={cn({ ['error']: errors.user })}
 			/>
 			<div className='error_message'>{errors.user?.message}</div>
+			<Label label='Password' />
 			<Input
 				type='password'
 				placeholder='Input password'

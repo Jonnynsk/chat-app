@@ -1,0 +1,8 @@
+@import '../../../assets/styles/index.scss';
+
+.label {
+    @include font(13px, 600, 19px);
+    color: $main-text;
+    margin-top: 48px;
+    margin-bottom: 4px;
+}

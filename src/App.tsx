@@ -1,7 +1,7 @@
 import { FC } from 'react'
 
-import LoginPage from './components/organisms/LoginPage'
-// import ChatPage from './components/organisms/ChatPage'
+// import ChatPage from './components/templates/ChatPage'
+import LoginPage from './components/templates/LoginPage'
 
 const App: FC = () => {
 	return (

@@ -8,14 +8,12 @@ input {
 	border-radius: 8px;
 	outline: none;
 	padding-left: 16px;
-	
-	margin-top: 55px;
-	margin-left: 55px;
-	
+
 	&::placeholder {
 		@include font(15px, 400, 23px);
 		color: $placeholder;
 	}
+
 	&:focus {
 		border: 1px solid $main-blue;
 	}
