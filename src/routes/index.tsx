@@ -1,8 +1,8 @@
 import { FC } from 'react'
 import { Redirect, Route, Switch } from 'react-router'
 
-import Chat from '../pages/Chat'
 import Login from '../pages/Login'
+import Chat from '../pages/Chat'
 import { SCREENS } from './endpoints'
 
 const Routes: FC = () => {

@@ -3,6 +3,7 @@ import cn from 'classnames'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
+import { useHistory } from 'react-router'
 
 import './styles.scss'
 
@@ -17,12 +18,17 @@ const scheme = yup.object().shape({
 })
 
 const LoginForm: FC = () => {
+	const history = useHistory()
+
 	const {
 		register,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<DataProps>({ resolver: yupResolver(scheme) })
-	const formSubmit: SubmitHandler<DataProps> = data => console.log(data)
+	const formSubmit: SubmitHandler<DataProps> = data => {
+		console.log(data)
+		history.push('/chat')
+	}
 
 	return (
 		<form onSubmit={handleSubmit(formSubmit)}>

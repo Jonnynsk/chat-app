@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import './styles.scss'
 
@@ -9,7 +10,9 @@ const Header: FC = () => {
 	return (
 		<header>
 			<img className='logo' src={logo} />
-			<img className='auth' src={authUser} />
+			<NavLink to='/login'>
+				<img className='auth' src={authUser} />
+			</NavLink>
 		</header>
 	)
 }
