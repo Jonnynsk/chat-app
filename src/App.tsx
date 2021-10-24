@@ -1,13 +1,11 @@
 import { FC } from 'react'
 
-import LoginPage from './components/templates/LoginPage'
-// import ChatPage from './components/templates/ChatPage'
+import Routes from './routes'
 
 const App: FC = () => {
 	return (
 		<div className='App'>
-			<LoginPage />
-			{/* <ChatPage /> */}
+			<Routes />
 		</div>
 	)
 }
