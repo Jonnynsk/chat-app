@@ -1,24 +1,16 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
 
 import PickUser from '../PickUser'
 
 interface UsersProps {
-	id: number
-	name: string
-	message: string
+	users: any
 }
 
-const Users: FC = () => {
-	const [users, setUsers] = useState<UsersProps[]>([
-		{ id: 1, name: 'Konstantin Konstantinopolski', message: 'Hey!' },
-		{ id: 2, name: 'Marina Joe', message: 'Sed ut per...' },
-		{ id: 3, name: 'Ernest Gillroy', message: 'How are you doing?' },
-	])
-
+const Users: FC<UsersProps> = ({ users }) => {
 	return (
 		<div>
-			{users.map(user => (
-				<PickUser name={user.name} message={user.message} />
+			{users.map((user: any) => (
+				<PickUser key={user.id} name={user.name} message={user.message} />
 			))}
 		</div>
 	)
