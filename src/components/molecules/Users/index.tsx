@@ -1,10 +1,10 @@
 import { FC } from 'react'
 
+import { DialogUsersProps } from '../../../models/DialogUsersProps'
 import PickUser from '../PickUser'
 
 interface UsersProps {
-	users: any
-	// users: [{id: number; name: string; message: string}]
+	users: DialogUsersProps[]
 }
 
 const Users: FC<UsersProps> = ({ users }) => {

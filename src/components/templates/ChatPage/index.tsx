@@ -6,16 +6,11 @@ import Header from '../../molecules/Header'
 import chatBack from '../../../assets/images/chatBack.svg'
 import Users from '../../molecules/Users'
 import NoUsers from '../../molecules/NoUsers'
-import Loading from '../../atoms/Loading'
-
-interface UsersProps {
-	id: number
-	name: string
-	message: string
-}
+import { DialogUsersProps } from '../../../models/DialogUsersProps'
+// import Loading from '../../atoms/Loading'
 
 const ChatPage: FC = () => {
-	const [users, setUsers] = useState<UsersProps[]>([
+	const [users, setUsers] = useState<DialogUsersProps[]>([
 		{ id: 1, name: 'Konstantin Konstantinopolski', message: 'Hey!' },
 		{ id: 2, name: 'Marina Joe', message: 'Sed ut per...' },
 		{ id: 3, name: 'Ernest Gillroy', message: 'How are you doing?' },
