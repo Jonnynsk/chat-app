@@ -1,0 +1,31 @@
+@import '../../../assets/styles/index.scss';
+
+.header1 {
+	@include font(42px, 800, 51.2px);
+    color: $main-text;
+}
+
+.header2 {
+    @include font(27px, 700, 32.91px);
+    color: $main-text;
+}
+
+.header3 {
+    @include font(20px, 700, 24.38px);
+    color: $main-text;
+}
+
+.header4 {
+    @include font(15px, 700, 18.29px);
+    color: $main-text;
+}
+
+.paragraph1 {
+    @include font(16px, 400, 19.5px);
+    color: $chat-text;
+}
+
+.paragraph2 {
+    @include font(14px, 500, 17.07px);
+    color: $chat-text-sec;
+}

@@ -3,9 +3,9 @@ import { FC } from 'react'
 import './styles.scss'
 
 interface ButtonProps {
-	children: string
 	type: string
 	onClick?: () => void
+	children: React.ReactNode
 }
 
 const Button: FC<ButtonProps> = ({ children, type, onClick, ...props }) => {

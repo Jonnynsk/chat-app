@@ -21,14 +21,12 @@ const Input: FC<InputProps> = ({
 	className,
 }) => {
 	return (
-		<div>
-			<input
-				{...register(label)}
-				type={type}
-				placeholder={placeholder}
-				className={className}
-			/>
-		</div>
+		<input
+			{...register(label)}
+			type={type}
+			placeholder={placeholder}
+			className={className}
+		/>
 	)
 }
 

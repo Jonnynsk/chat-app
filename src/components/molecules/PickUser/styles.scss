@@ -1,0 +1,17 @@
+@import '../../../assets/styles/index.scss';
+
+.frame {
+	@include size(362px, 72px);
+	.frame_user {
+		padding: 12px 24px;
+        display: flex;
+		flex-direction: row;
+		align-items: center;
+        .frame_user_text {
+            margin-left: 12px;
+            .frame_user_text__name {
+                margin-bottom: 4px;
+            }
+        }
+	}
+}

@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import Logo from '../../atoms/Logo'
+import Typography from '../../atoms/Typography'
 
 import './styles.scss'
 
@@ -11,12 +12,12 @@ const Wellcome: FC = () => {
 				<Logo />
 			</div>
 			<div>
-				<h1>
+				<Typography type='1'>
 					Wellcome to
 					<span style={{ color: '#5E93E7' }}> Chatty</span>
 					<span style={{ color: '#B3CDF8' }}>!</span>
-				</h1>
-				<h2>Please, autorize yourself</h2>
+				</Typography>
+				<Typography type='2'>Please, autorize yourself</Typography>
 			</div>
 		</div>
 	)
