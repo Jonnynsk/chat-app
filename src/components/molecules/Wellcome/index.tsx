@@ -7,16 +7,19 @@ import './styles.scss'
 
 const Wellcome: FC = () => {
 	return (
-		<div>
-			<div className='logo'>
+		<div className='wellcome'>
+			<div className='wellcome_logo'>
 				<Logo />
 			</div>
 			<div>
-				<Typography type='1'>
-					Wellcome to
-					<span style={{ color: '#5E93E7' }}> Chatty</span>
-					<span style={{ color: '#B3CDF8' }}>!</span>
-				</Typography>
+				<div className='wellcome_header'>
+					<Typography type='1'>
+						Wellcome to
+						<span style={{ color: '#5E93E7' }}> Chatty</span>
+						<span style={{ color: '#B3CDF8' }}>!</span>
+					</Typography>
+				</div>
+
 				<Typography type='2'>Please, autorize yourself</Typography>
 			</div>
 		</div>

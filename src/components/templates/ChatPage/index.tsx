@@ -6,6 +6,7 @@ import Header from '../../molecules/Header'
 import chatBack from '../../../assets/images/chatBack.svg'
 import Users from '../../molecules/Users'
 import NoUsers from '../../molecules/NoUsers'
+import Loading from '../../atoms/Loading'
 
 interface UsersProps {
 	id: number
@@ -24,12 +25,22 @@ const ChatPage: FC = () => {
 		<div className='chat_app'>
 			<div className='chat_app_header'>
 				<Header />
+			</div>
+			<div className='chat_app_sidebar'>
 				<div className='chat_app_users'>
-					{users.length ? <Users users={users} /> : <NoUsers />}
+					{users.length ? (
+						<Users users={users} />
+					) : (
+						<div className='chat_app_users__empty'>
+							<NoUsers />
+						</div>
+					)}
 				</div>
 			</div>
-			<div className='chat_app_sidebar'></div>
 			<div className='chat_app_chat'>
+				{/* <div className='chat_app_chat__loading'>
+					<Loading />
+				</div> */}
 				<img src={chatBack} />
 			</div>
 		</div>

@@ -11,18 +11,29 @@
 	.chat_app_header {
 		grid-area: h;
 	}
-	.chat_app_users {
-		margin-top: 20px;
-	}
 	.chat_app_sidebar {
 		grid-area: s;
-        width: 362px;
-        margin-top: 20px;
+		width: 362px;
+		margin-top: 20px;
+		border-right: 1px solid $line;
+		.chat_app_users {
+			margin-top: 20px;
+			.chat_app_users__empty {
+				display: flex;
+				justify-content: center;
+				margin-top: 340px;
+			}
+		}
 	}
 	.chat_app_chat {
 		grid-area: c;
-        width: 1078px;
-        margin-top: 20px;
-        background: $backgound;
+		width: 1078px;
+		margin-top: 20px;
+		background: $backgound;
+		// .chat_app_chat__loading {
+		// 	display: flex;
+		// 	justify-content: center;
+		// 	align-items: center;
+		// }
 	}
 }

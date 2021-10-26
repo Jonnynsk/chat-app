@@ -3,16 +3,20 @@ import { NavLink } from 'react-router-dom'
 
 import './styles.scss'
 
-import logo from '../../../assets/images/logoSmall.svg'
-import authUser from '../../../assets/images/authUser.svg'
+import LogoSmall from '../../atoms/LogoSmall'
+import AuthUser from '../../atoms/AuthUser'
 
 const Header: FC = () => {
 	return (
 		<header>
-			<img className='logo' src={logo} />
-			<NavLink to='/login'>
-				<img className='auth' src={authUser} />
-			</NavLink>
+			<div className='logo'>
+				<LogoSmall />
+			</div>
+			<div className='auth'>
+				<NavLink to='/login'>
+					<AuthUser />
+				</NavLink>
+			</div>
 		</header>
 	)
 }

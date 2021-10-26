@@ -1,19 +1,14 @@
 @import '../../../assets/styles/index.scss';
 
-.logo {
-	position: absolute;
-	left: 121px;
-	top: 256px;
-}
-
-h1 {
-	position: absolute;
-	left: 121px;
-	top: 315px;
-}
-
-h2 {
-	position: absolute;
-	left: 121px;
-	top: 390px;
+.wellcome {
+	width: 474px;
+	height: 180px;
+	margin-left: 121px;
+	margin-top: 256px;
+	.wellcome_logo {
+		margin-bottom: 16.12px;
+	}
+	.wellcome_header {
+		margin-bottom: 24px;
+	}
 }

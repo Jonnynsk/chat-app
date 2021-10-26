@@ -2,6 +2,10 @@
 
 .frame {
 	@include size(362px, 72px);
+    &:hover {
+        background: $main-blue;
+        cursor: pointer;
+    }
 	.frame_user {
 		padding: 12px 24px;
         display: flex;

@@ -1,9 +1,7 @@
 @import '../../../assets/styles/index.scss';
 
 form {
-	position: absolute;
-	left: 121px;
-	top: 471px;
+	margin-left: 121px;
 	.error {
 		background: url('../../../assets/images/error.svg') right 16px center
 			no-repeat;
@@ -19,5 +17,8 @@ form {
 		margin-top: 4px;
 		width: 156px;
 		height: 19px;
+	}
+	.form_button {
+		margin-top: 25px;
 	}
 }

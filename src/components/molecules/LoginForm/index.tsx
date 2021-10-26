@@ -50,7 +50,9 @@ const LoginForm: FC = () => {
 				className={cn({ ['error']: errors.password })}
 			/>
 			<div className='error_message'>{errors.password?.message}</div>
-			<Button type='submit'>Log in</Button>
+			<div className='form_button'>
+				<Button type='submit'>Log in</Button>
+			</div>
 		</form>
 	)
 }
