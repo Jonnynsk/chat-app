@@ -32,24 +32,27 @@ const LoginForm: FC = () => {
 
 	return (
 		<form onSubmit={handleSubmit(formSubmit)}>
-			<Label label='User name' />
+			<Label labelName='User name' />
 			<Input
 				type='text'
 				placeholder='Input user name'
 				label='user'
 				register={register}
-				className={cn({ ['error']: errors.user })}
+				className={cn('input_field', { ['error']: errors.user })}
 			/>
 			<div className='error_message'>{errors.user?.message}</div>
-			<Label label='Password' />
-			<Input
-				type='password'
-				placeholder='Input password'
-				label='password'
-				register={register}
-				className={cn({ ['error']: errors.password })}
-			/>
-			<div className='error_message'>{errors.password?.message}</div>
+			<div className='input-margin'>
+				<Label labelName='Password' />
+				<Input
+					type='password'
+					placeholder='Input password'
+					label='password'
+					register={register}
+					className={cn('input_field', { ['error']: errors.password })}
+				/>
+				<div className='error_message'>{errors.password?.message}</div>
+			</div>
+
 			<div className='form_button'>
 				<Button type='submit'>Log in</Button>
 			</div>

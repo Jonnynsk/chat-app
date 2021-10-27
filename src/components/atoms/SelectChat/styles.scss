@@ -1,0 +1,17 @@
+@import '../../../assets/styles/index.scss';
+
+.select_chat {
+    display: flex;
+    justify-content: center; 
+    align-items: center;
+	width: 339px;
+	height: 56px;
+	background: rgba(255, 255, 255, 0.5);
+	border: 1px solid #5e93e7;
+	box-sizing: border-box;
+	border-radius: 32px;
+	p {
+		@include font(15px, 500, 18.29px);
+		color: $main-text;
+	}
+}

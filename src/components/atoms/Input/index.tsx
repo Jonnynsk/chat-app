@@ -1,31 +1,29 @@
 import { FC } from 'react'
 import { Path, UseFormRegister } from 'react-hook-form'
 
-import './styles.scss'
-
 import { DataProps } from '../../../models/DataProps'
 
 interface InputProps {
 	type: string
 	placeholder: string
+	className: string
 	register: UseFormRegister<DataProps>
 	label: Path<DataProps>
-	className: string
 }
 
 const Input: FC<InputProps> = ({
 	type,
 	placeholder,
+	className,
 	register,
 	label,
-	className,
 }) => {
 	return (
 		<input
-			{...register(label)}
 			type={type}
 			placeholder={placeholder}
 			className={className}
+			{...register(label)}
 		/>
 	)
 }

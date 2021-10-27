@@ -1,0 +1,9 @@
+@import '../../../assets/styles/index.scss';
+
+.button_send {
+    border: 0;
+    outline: none;
+    background: $main-white;
+    cursor: pointer;
+    padding-right: 25px;
+}

@@ -3,11 +3,13 @@ import { FC, useState } from 'react'
 import './styles.scss'
 
 import Header from '../../molecules/Header'
-import chatBack from '../../../assets/images/chatBack.svg'
 import Users from '../../molecules/Users'
 import NoUsers from '../../molecules/NoUsers'
 import { DialogUsersProps } from '../../../models/DialogUsersProps'
-// import Loading from '../../atoms/Loading'
+import MessageInput from '../../molecules/MessageInput'
+import Loading from '../../atoms/Loading'
+import UserInfo from './../../molecules/UserInfo/index'
+// import SelectChat from './../../atoms/SelectChat/index'
 
 const ChatPage: FC = () => {
 	const [users, setUsers] = useState<DialogUsersProps[]>([
@@ -21,6 +23,7 @@ const ChatPage: FC = () => {
 			<div className='chat_app_header'>
 				<Header />
 			</div>
+
 			<div className='chat_app_sidebar'>
 				<div className='chat_app_users'>
 					{users.length ? (
@@ -33,10 +36,17 @@ const ChatPage: FC = () => {
 				</div>
 			</div>
 			<div className='chat_app_chat'>
-				{/* <div className='chat_app_chat__loading'>
-					<Loading />
+				<UserInfo />
+				{/* <div className='chat_app_chat_select'>
+				<SelectChat />
 				</div> */}
-				<img src={chatBack} />
+
+				<div className='chat_app_chat__loading'>
+					<Loading />
+				</div>
+				<div className='chat-app-message-form'>
+					<MessageInput />
+				</div>
 			</div>
 		</div>
 	)

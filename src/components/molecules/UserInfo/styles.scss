@@ -1,0 +1,12 @@
+@import '../../../assets/styles/index.scss';
+
+.user_info {
+	width: 1078px;
+	height: 96px;
+	background: $main-white;
+	border-bottom: 1px solid $message-input;
+
+	.user_info_online {
+		padding: 24px;
+	}
+}

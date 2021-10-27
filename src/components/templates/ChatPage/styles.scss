@@ -2,6 +2,7 @@
 
 .chat_app {
 	display: grid;
+	width: 1440px;
 	height: 1080px;
 	grid-template-areas:
 		'h h'
@@ -9,11 +10,14 @@
 	grid-template-rows: 60px 1fr;
 	grid-template-columns: 2fr 10fr;
 	.chat_app_header {
+		width: 1440px;
+		height: 80px;
 		grid-area: h;
 	}
 	.chat_app_sidebar {
 		grid-area: s;
 		width: 362px;
+		height: 1000px;
 		margin-top: 20px;
 		border-right: 1px solid $line;
 		.chat_app_users {
@@ -28,12 +32,25 @@
 	.chat_app_chat {
 		grid-area: c;
 		width: 1078px;
+		height: 1000px;
 		margin-top: 20px;
-		background: $backgound;
-		// .chat_app_chat__loading {
-		// 	display: flex;
-		// 	justify-content: center;
-		// 	align-items: center;
-		// }
+		background: $backgound url('../../../assets/images/chatBack.svg') right -83px;
+		.chat-app-message-form {
+			position: absolute;
+			width: 1078px;
+			height: 80px;
+			left: 362px;
+			top: 1000px;
+		}
+		.chat_app_chat__loading {
+			position: absolute;
+			left: 873px;
+			top: 512px;
+		}
+		.chat_app_chat_select {
+			position: absolute;
+			left: 732px;
+			top: 512px;
+		}
 	}
 }

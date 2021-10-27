@@ -2,12 +2,10 @@ import { FC } from 'react'
 
 import './styles.scss'
 
-interface LabelProps {
-	label: 'User name' | 'Password'
-}
+import { LabelProps } from '../../../models/LabelProps'
 
-const Label: FC<LabelProps> = ({ label }) => {
-	return <div className='label'>{label}</div>
+const Label: FC<LabelProps> = ({ labelName }) => {
+	return <div className='label'>{labelName}</div>
 }
 
 export default Label

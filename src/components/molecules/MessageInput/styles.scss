@@ -1,0 +1,21 @@
+@import '../../../assets/styles/index.scss';
+
+.form_message {
+	display: flex;
+	border-top: 1px solid $message-input;
+	.message_input {
+		@include font(16px, 400, 19.5px);
+		color: $chat-text;
+		width: 1078px;
+		height: 80px;
+		background: #ffffff;
+		border: 0;
+		outline: none;
+		padding-left: 88px;
+		background-color: $main-white;
+		&::placeholder {
+			@include font(16px, 500, 19.5px);
+			color: $message-input-placeholder;
+		}
+	}
+}
