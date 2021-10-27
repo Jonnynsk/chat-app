@@ -4,9 +4,13 @@ import './styles.scss'
 
 import sendMessage from '../../../assets/images/sendMessage.svg'
 
-const SendMessage: FC = () => {
+interface SendMessageProps {
+	onClick: (e: React.MouseEvent<HTMLButtonElement>) => void
+}
+
+const SendMessage: FC<SendMessageProps> = ({ onClick }) => {
 	return (
-		<button className='button_send'>
+		<button onClick={onClick} className='button_send'>
 			<img src={sendMessage} />
 		</button>
 	)
