@@ -11,7 +11,6 @@ form {
 		outline: none;
 		padding-left: 16px;
 
-
 		&::placeholder {
 			@include font(15px, 400, 23px);
 			color: $placeholder;
@@ -37,11 +36,23 @@ form {
 		width: 156px;
 		height: 19px;
 	}
-	
+
 	.form_button {
 		margin-top: 25px;
 	}
 	.input-margin {
 		margin-top: -25px;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+	form {
+		margin-left: 14px;
+		// margin-top: 71px;
+
+		.input_field {
+			width: 348px;
+			height: 48px;
+		}
 	}
 }

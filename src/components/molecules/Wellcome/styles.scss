@@ -12,3 +12,22 @@
 		margin-bottom: 24px;
 	}
 }
+
+@media only screen and (max-width: 375px) {
+	.wellcome {
+		background: $backgound;
+		border-radius: 0px 0px 16px 16px;
+		width: 100%;
+		height: 325px;
+		margin-top: 0;
+		margin-left: 0;
+		.wellcome_header {
+			.header1 {
+				font-size: 27px;
+			}
+		}
+		.header2 {
+			font-size: 16px;
+		}
+	}
+}

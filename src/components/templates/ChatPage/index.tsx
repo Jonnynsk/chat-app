@@ -7,8 +7,8 @@ import Users from '../../molecules/Users'
 import NoUsers from '../../molecules/NoUsers'
 import { DialogUsersProps } from '../../../models/DialogUsersProps'
 import MessageInput from '../../molecules/MessageInput'
-import Loading from '../../atoms/Loading'
 import UserInfo from './../../molecules/UserInfo/index'
+import Loading from '../../atoms/Loading'
 // import SelectChat from './../../atoms/SelectChat/index'
 
 const ChatPage: FC = () => {

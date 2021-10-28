@@ -1,12 +1,28 @@
 .wrapper {
-    display: grid;
-    grid-template-areas: 
-    'log right';
-    grid-template-columns: 716px 724px;
-    .login {
-        grid-area: log;
+    width: 1440px;
+    height: 1080px;
+	display: grid;
+	grid-template-areas: 'log right';
+	grid-template-columns: 716px 724px;
+	.login {
+		grid-area: log;
+	}
+	.right {
+		grid-area: right;
+	}
+}
+
+@media only screen and (max-width: 375px) {
+    .wrapper {
+        display: flex;
+        width: 375px;
+        height: 717px;
     }
+	.login {
+        width: 375px;
+        height: 717px;
+	}
     .right {
-        grid-area: right;
+        display: none;
     }
 }

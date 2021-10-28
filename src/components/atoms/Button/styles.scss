@@ -18,3 +18,10 @@
 		background-color: $inactive;
 	}
 }
+
+@media only screen and (max-width: 375px) {
+	.button {
+		width: 347px;
+		margin-top: 29px;
+	}
+}
