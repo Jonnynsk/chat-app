@@ -3,14 +3,14 @@ import { FC } from 'react'
 import './styles.scss'
 
 interface ButtonProps {
-	type: string
+	type: 'button' | 'submit' | 'reset'
 	onClick?: () => void
 	children: React.ReactNode
 }
 
-const Button: FC<ButtonProps> = ({ children, type, onClick, ...props }) => {
+const Button: FC<ButtonProps> = ({ type, onClick, children }) => {
 	return (
-		<button {...props} className='button'>
+		<button type={type} onClick={onClick} className='button'>
 			{children}
 		</button>
 	)

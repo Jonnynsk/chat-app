@@ -7,7 +7,7 @@ import loading from '../../../assets/images/loading.svg'
 const Loading: FC = () => {
 	return (
 		<div className='loading'>
-			<img src={loading} />
+			<img src={loading} alt='loading...' />
 		</div>
 	)
 }

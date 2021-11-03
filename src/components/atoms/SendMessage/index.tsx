@@ -11,7 +11,7 @@ interface SendMessageProps {
 const SendMessage: FC<SendMessageProps> = ({ onClick }) => {
 	return (
 		<button onClick={onClick} className='button_send'>
-			<img src={sendMessage} />
+			<img src={sendMessage} alt='sendMessage' />
 		</button>
 	)
 }

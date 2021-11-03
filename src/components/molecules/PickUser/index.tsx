@@ -8,11 +8,12 @@ import Typography from '../../atoms/Typography'
 interface PickUserProps {
 	name: string
 	message: string
+	onClick: () => void
 }
 
-const PickUser: FC<PickUserProps> = ({ name, message }) => {
+const PickUser: FC<PickUserProps> = ({ name, message, onClick }) => {
 	return (
-		<div className='frame'>
+		<div className='frame' onClick={onClick}>
 			<div className='frame_user'>
 				<MaleUser />
 				<div className='frame_user_text'>

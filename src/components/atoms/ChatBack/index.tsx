@@ -7,7 +7,7 @@ import chatBack from '../../../assets/images/chatBack.svg'
 const ChatBack: FC = () => {
 	return (
 		<div className='chat_back'>
-			<img src={chatBack} />
+			<img src={chatBack} alt='chatBack' />
 		</div>
 	)
 }
