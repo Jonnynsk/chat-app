@@ -1,6 +1,7 @@
 import { FC } from 'react'
 
 import './styles.scss'
+
 import Label from './../../atoms/Label/index'
 import Input from '../../atoms/Input'
 import { LabelProps } from './../../../models/LabelProps'

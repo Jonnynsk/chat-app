@@ -8,7 +8,10 @@ import LoginForm from '../LoginForm'
 const LoginPart: FC = () => {
 	return (
 		<div>
-			<Wellcome />
+			<div className='wellcome_part'>
+				<Wellcome header='Wellcome to' subHeader='Please, autorize yourself' />
+			</div>
+
 			<LoginForm />
 		</div>
 	)

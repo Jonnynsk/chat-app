@@ -5,7 +5,12 @@ import Typography from '../../atoms/Typography'
 
 import './styles.scss'
 
-const Wellcome: FC = () => {
+interface WellcomeProps {
+	header: 'Wellcome to' | 'Sign Up to'
+	subHeader: 'Please, autorize yourself' | 'Registration'
+}
+
+const Wellcome: FC<WellcomeProps> = ({ header, subHeader }) => {
 	return (
 		<div className='wellcome'>
 			<div className='wellcome_logo'>
@@ -14,13 +19,13 @@ const Wellcome: FC = () => {
 			<div>
 				<div className='wellcome_header'>
 					<Typography type='1'>
-						Wellcome to
+						{header}
 						<span style={{ color: '#5E93E7' }}> Chatty</span>
 						<span style={{ color: '#B3CDF8' }}>!</span>
 					</Typography>
 				</div>
 
-				<Typography type='2'>Please, autorize yourself</Typography>
+				<Typography type='2'>{subHeader}</Typography>
 			</div>
 		</div>
 	)

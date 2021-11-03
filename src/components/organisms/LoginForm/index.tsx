@@ -31,7 +31,7 @@ const LoginForm: FC = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit(formSubmit)}>
+		<form onSubmit={handleSubmit(formSubmit)} className='login_form'>
 			<Controller
 				control={control}
 				name='user'
@@ -48,7 +48,7 @@ const LoginForm: FC = () => {
 				)}
 			/>
 			<div className='error_message'>{errors.user?.message}</div>
-			<div className='input-margin'>
+			<div>
 				<Controller
 					control={control}
 					name='password'

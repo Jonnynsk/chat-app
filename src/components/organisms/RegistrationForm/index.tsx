@@ -22,7 +22,7 @@ const RegistrationForm: FC = () => {
 	}
 
 	return (
-		<form onSubmit={handleSubmit(formSubmit)}>
+		<form onSubmit={handleSubmit(formSubmit)} className='reg_form'>
 			<Controller
 				control={control}
 				name='userName'
@@ -33,7 +33,52 @@ const RegistrationForm: FC = () => {
 						placeholder='Input user name'
 						type='text'
 						className={classNames('input_field', {
+							['error']: errors.userName,
+						})}
+					/>
+				)}
+			/>
+			<Controller
+				control={control}
+				name='userName'
+				render={({ field: { onChange } }) => (
+					<InputField
+						onChange={onChange}
+						labelName='Create password'
+						placeholder='Create password'
+						type='password'
+						className={classNames('input_field', {
 							['error']: errors.password,
+						})}
+					/>
+				)}
+			/>
+			<Controller
+				control={control}
+				name='userName'
+				render={({ field: { onChange } }) => (
+					<InputField
+						onChange={onChange}
+						labelName='Password confirmation'
+						placeholder='Password confirmation'
+						type='password'
+						className={classNames('input_field', {
+							['error']: errors.confirmation,
+						})}
+					/>
+				)}
+			/>
+			<Controller
+				control={control}
+				name='userName'
+				render={({ field: { onChange } }) => (
+					<InputField
+						onChange={onChange}
+						labelName='Nickname'
+						placeholder='Nickname'
+						type='text'
+						className={classNames('input_field', {
+							['error']: errors.nickName,
 						})}
 					/>
 				)}
