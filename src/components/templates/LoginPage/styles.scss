@@ -4,10 +4,10 @@
 	display: grid;
 	grid-template-areas: 'log right';
 	grid-template-columns: 716px 724px;
-	.login {
+	.wrapper_login {
 		grid-area: log;
 	}
-	.right {
+	.wrapper_right {
 		grid-area: right;
 	}
 }
@@ -18,11 +18,11 @@
         width: 375px;
         height: 717px;
     }
-	.login {
+	.wrapper_login {
         width: 375px;
         height: 717px;
 	}
-    .right {
+    .wrapper_right {
         display: none;
     }
 }

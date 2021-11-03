@@ -3,7 +3,7 @@ import { FC } from 'react'
 import './styles.scss'
 
 import Wellcome from '../../molecules/Wellcome'
-import LoginForm from '../../molecules/LoginForm'
+import LoginForm from '../LoginForm'
 
 const LoginPart: FC = () => {
 	return (

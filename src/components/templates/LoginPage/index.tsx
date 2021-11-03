@@ -8,10 +8,10 @@ import './styles.scss'
 const LoginPage: FC = () => {
 	return (
 		<div className='wrapper'>
-			<div className='login'>
+			<div className='wrapper_login'>
 				<LoginPart />
 			</div>
-			<div className='right'>
+			<div className='wrapper_right'>
 				<RightSide />
 			</div>
 		</div>

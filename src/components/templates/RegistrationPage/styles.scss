@@ -1,0 +1,13 @@
+.wrapper_reg {
+    width: 1440px;
+    height: 1080px;
+	display: grid;
+	grid-template-areas: 'log right';
+	grid-template-columns: 716px 724px;
+	.wrapper_reg_main {
+		grid-area: log;
+	}
+	.wrapper_reg_right {
+		grid-area: right;
+	}
+}

@@ -8,13 +8,12 @@ import { useHistory } from 'react-router'
 import './styles.scss'
 
 import Button from '../../atoms/Button'
-import Input from '../../atoms/Input'
+import InputField from '../../molecules/InputField'
 import { DataProps } from '../../../models/DataProps'
-import Label from '../../atoms/Label'
 
 const scheme = yup.object().shape({
 	user: yup.string().required('Something goes wrong'),
-	password: yup.string().min(5).required(),
+	password: yup.string().min(5).required('Something goes wrong'),
 })
 
 const LoginForm: FC = () => {
@@ -33,42 +32,42 @@ const LoginForm: FC = () => {
 
 	return (
 		<form onSubmit={handleSubmit(formSubmit)}>
-			<Label labelName='User name' />
 			<Controller
 				control={control}
 				name='user'
 				render={({ field: { onChange } }) => (
-					<Input
+					<InputField
 						onChange={onChange}
+						labelName='User name'
+						placeholder='Input user name'
+						type='text'
 						className={classNames('input_field', {
 							['error']: errors.password,
 						})}
-						type='text'
-						placeholder='Input user name'
 					/>
 				)}
 			/>
 			<div className='error_message'>{errors.user?.message}</div>
 			<div className='input-margin'>
-				<Label labelName='Password' />
 				<Controller
 					control={control}
 					name='password'
 					render={({ field: { onChange } }) => (
-						<Input
+						<InputField
 							onChange={onChange}
+							labelName='Password'
+							placeholder='Input password'
+							type='password'
 							className={classNames('input_field', {
 								['error']: errors.password,
 							})}
-							type='password'
-							placeholder='Input password'
 						/>
 					)}
 				/>
 				<div className='error_message'>{errors.password?.message}</div>
 			</div>
 
-			<div className='form_button'>
+			<div className='form_buttons'>
 				<Button type='submit'>Log in</Button>
 			</div>
 		</form>
