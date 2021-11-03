@@ -1,6 +1,6 @@
 import { FC } from 'react'
 import classNames from 'classnames'
-import { useForm, SubmitHandler } from 'react-hook-form'
+import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 import * as yup from 'yup'
 import { yupResolver } from '@hookform/resolvers/yup'
 import { useHistory } from 'react-router'
@@ -14,40 +14,57 @@ import Label from '../../atoms/Label'
 
 const scheme = yup.object().shape({
 	user: yup.string().required('Something goes wrong'),
-	password: yup.string().required('Something goes wrong'),
+	password: yup.string().min(5).required(),
 })
 
 const LoginForm: FC = () => {
 	const history = useHistory()
 
 	const {
-		register,
+		control,
 		handleSubmit,
 		formState: { errors },
-	} = useForm<DataProps>({ resolver: yupResolver(scheme) })
+	} = useForm<DataProps>({
+		resolver: yupResolver(scheme),
+	})
 	const formSubmit: SubmitHandler<DataProps> = data => {
+		console.log(data)
 		history.push('/chat')
 	}
 
 	return (
 		<form onSubmit={handleSubmit(formSubmit)}>
 			<Label labelName='User name' />
-			<Input
-				type='text'
-				placeholder='Input user name'
-				label='user'
-				register={register}
-				className={classNames('input_field', { ['error']: errors.user })}
+			<Controller
+				control={control}
+				name='user'
+				render={({ field: { onChange } }) => (
+					<Input
+						onChange={onChange}
+						className={classNames('input_field', {
+							['error']: errors.password,
+						})}
+						type='text'
+						placeholder='User name'
+					/>
+				)}
 			/>
 			<div className='error_message'>{errors.user?.message}</div>
 			<div className='input-margin'>
 				<Label labelName='Password' />
-				<Input
-					type='password'
-					placeholder='Input password'
-					label='password'
-					register={register}
-					className={classNames('input_field', { ['error']: errors.password })}
+				<Controller
+					control={control}
+					name='password'
+					render={({ field: { onChange } }) => (
+						<Input
+							onChange={onChange}
+							className={classNames('input_field', {
+								['error']: errors.password,
+							})}
+							type='password'
+							placeholder='Password'
+						/>
+					)}
 				/>
 				<div className='error_message'>{errors.password?.message}</div>
 			</div>
