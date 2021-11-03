@@ -28,7 +28,6 @@ const LoginForm: FC = () => {
 		resolver: yupResolver(scheme),
 	})
 	const formSubmit: SubmitHandler<DataProps> = data => {
-		console.log(data)
 		history.push('/chat')
 	}
 
@@ -45,7 +44,7 @@ const LoginForm: FC = () => {
 							['error']: errors.password,
 						})}
 						type='text'
-						placeholder='User name'
+						placeholder='Input user name'
 					/>
 				)}
 			/>
@@ -62,7 +61,7 @@ const LoginForm: FC = () => {
 								['error']: errors.password,
 							})}
 							type='password'
-							placeholder='Password'
+							placeholder='Input password'
 						/>
 					)}
 				/>

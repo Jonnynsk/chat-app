@@ -2,9 +2,10 @@ import { FC, useState } from 'react'
 
 import './styles.scss'
 
-import InputMessage from '../../atoms/InputMessage'
 import Attach from '../../atoms/Attach'
 import SendMessage from './../../atoms/SendMessage/index'
+import { Controller, useForm } from 'react-hook-form'
+import Input from '../../atoms/Input'
 
 const MessageInput: FC = () => {
 	const [messages, setMessages] = useState([{ id: 1, value: 'Hello' }])
@@ -18,15 +19,22 @@ const MessageInput: FC = () => {
 		setValue('')
 	}
 
+	const { control } = useForm()
+
 	return (
 		<div className='form_message'>
 			<Attach />
-			<InputMessage
-				value={value}
-				onChange={e => setValue(e.target.value)}
-				type='text'
-				placeholder='Write something...'
-				className='message_input'
+			<Controller
+				control={control}
+				name='message'
+				render={({ field: { onChange } }) => (
+					<Input
+						onChange={onChange}
+						className='message_input'
+						type='text'
+						placeholder='Write something...'
+					/>
+				)}
 			/>
 			<SendMessage onClick={sendNewMessage} />
 		</div>
