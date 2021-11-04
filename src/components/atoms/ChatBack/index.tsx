@@ -1,7 +1,5 @@
 import { FC } from 'react'
 
-import './styles.scss'
-
 import chatBack from '../../../assets/images/chatBack.svg'
 
 const ChatBack: FC = () => {

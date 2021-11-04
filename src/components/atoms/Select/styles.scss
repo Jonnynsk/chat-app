@@ -1,0 +1,8 @@
+@import '../../../assets/styles/index.scss';
+
+.select {
+	@include size(171px, 56px);
+	@include font(15px, 400, 23px);
+	color: $main-text;
+	margin-bottom: 28px;
+}

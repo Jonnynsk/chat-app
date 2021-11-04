@@ -1,4 +1,5 @@
 export interface DataProps {
-	user: string
+	login: string
 	password: string
+	captcha: string
 }

@@ -3,11 +3,14 @@
 .button {
 	@include size(171px, 56px);
 	@include font(15px, 500, 23px);
-	color: $main-white;
 	border: none;
 	border-radius: 8px;
-	background-color: $main-blue;
 	cursor: pointer;
+}
+
+.button_submit {
+	background-color: $main-blue;
+	color: $main-white;
 	&:hover {
 		background-color: $hover-blue;
 	}
@@ -16,6 +19,23 @@
 	}
 	&:disabled {
 		background-color: $inactive;
+	}
+}
+
+.button_button {
+	background-color: $main-white;
+	color: $main-blue;
+	border: 1px solid $main-blue;
+	margin-left: 12px;
+	&:hover {
+		background-color: #f3f8ff;
+	}
+	&:active {
+		background-color: #dfecff;
+	}
+	&:disabled {
+		border: 1px solid #D1D1D1;
+		color: #d1d1d1;
 	}
 }
 

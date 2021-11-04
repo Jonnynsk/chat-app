@@ -8,4 +8,5 @@ export interface LabelProps {
 		| 'Password confirmation'
 		| 'Nickname'
 		| 'Your gender'
+		| ' '
 }

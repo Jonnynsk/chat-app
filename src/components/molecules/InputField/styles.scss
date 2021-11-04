@@ -1,7 +1,6 @@
 @import '../../../assets/styles/index.scss';
 
-.input_field {
-    @include size(354px, 56px);
+.input {
     @include font(15px, 400, 23px);
     color: $main-text;
     border: 1px solid $border-blue;
@@ -18,4 +17,12 @@
     &:focus {
         border: 1px solid $main-blue;
     }
+}
+
+.input_field {
+    @include size(354px, 56px);
+}
+
+.input_security {
+    @include size(171px, 56px);
 }

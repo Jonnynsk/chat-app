@@ -1,15 +1,18 @@
 import { FC } from 'react'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
-// import { useHistory } from 'react-router'
+import { useHistory } from 'react-router'
 
 import './styles.scss'
 
 import { RegDataProps } from '../../../models/RegDataProps'
 import InputField from '../../molecules/InputField'
 import classNames from 'classnames'
+import Button from '../../atoms/Button'
+import SelectItem from '../../atoms/Select/index.'
+import update from '../../../assets/images/update.svg'
 
 const RegistrationForm: FC = () => {
-	// const history = useHistory()
+	const history = useHistory()
 	const {
 		control,
 		handleSubmit,
@@ -25,29 +28,29 @@ const RegistrationForm: FC = () => {
 		<form onSubmit={handleSubmit(formSubmit)} className='reg_form'>
 			<Controller
 				control={control}
-				name='userName'
+				name='login'
 				render={({ field: { onChange } }) => (
 					<InputField
 						onChange={onChange}
 						labelName='Create user name'
 						placeholder='Input user name'
 						type='text'
-						className={classNames('input_field', {
-							['error']: errors.userName,
+						className={classNames('input', 'input_field', {
+							['error']: errors.login,
 						})}
 					/>
 				)}
 			/>
 			<Controller
 				control={control}
-				name='userName'
+				name='password'
 				render={({ field: { onChange } }) => (
 					<InputField
 						onChange={onChange}
 						labelName='Create password'
 						placeholder='Create password'
 						type='password'
-						className={classNames('input_field', {
+						className={classNames('input', 'input_field', {
 							['error']: errors.password,
 						})}
 					/>
@@ -55,34 +58,84 @@ const RegistrationForm: FC = () => {
 			/>
 			<Controller
 				control={control}
-				name='userName'
+				name='password_confirm'
 				render={({ field: { onChange } }) => (
 					<InputField
 						onChange={onChange}
 						labelName='Password confirmation'
 						placeholder='Password confirmation'
 						type='password'
-						className={classNames('input_field', {
-							['error']: errors.confirmation,
+						className={classNames('input', 'input_field', {
+							['error']: errors.password_confirm,
 						})}
 					/>
 				)}
 			/>
 			<Controller
 				control={control}
-				name='userName'
+				name='name'
 				render={({ field: { onChange } }) => (
 					<InputField
 						onChange={onChange}
 						labelName='Nickname'
 						placeholder='Nickname'
 						type='text'
-						className={classNames('input_field', {
-							['error']: errors.nickName,
+						className={classNames('input', 'input_field', {
+							['error']: errors.name,
 						})}
 					/>
 				)}
 			/>
+			<SelectItem labelName='Your gender' placeholder='Your gender' />
+			<div className='reg_form_captcha'>
+				<Controller
+					control={control}
+					name='captcha'
+					render={({ field: { onChange } }) => (
+						<InputField
+							onChange={onChange}
+							labelName='Security code'
+							placeholder='Security code'
+							type='text'
+							className={classNames('input', 'input_security', {
+								['error']: errors.captcha,
+							})}
+						/>
+					)}
+				/>
+				<div className='reg_form_captcha__input'>
+					<Controller
+						control={control}
+						name='captcha'
+						render={({ field: { onChange } }) => (
+							<InputField
+								onChange={onChange}
+								labelName=' '
+								placeholder=' '
+								type='text'
+								className={classNames('input', 'input_security', {
+									['error']: errors.captcha,
+								})}
+							/>
+						)}
+					/>
+				</div>
+				<span className='reg_form_captcha_update'>
+					<img src={update} />
+				</span>
+			</div>
+			<div className='reg_form_buttons'>
+				<Button type='submit' className={classNames('button', 'button_submit')}>
+					Register
+				</Button>
+				<Button
+					onClick={() => history.push('/login')}
+					type='button'
+					className={classNames('button', 'button_button')}
+				>
+					Log In
+				</Button>
+			</div>
 		</form>
 	)
 }
