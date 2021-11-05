@@ -1,0 +1,41 @@
+@import '../../../assets/styles/index.scss';
+
+.reg_form_captcha {
+    display: flex;
+    .reg_form_captcha__input {
+        margin-top: 19px;
+        margin-left: 12px;
+    }
+    .reg_form_captcha_update {
+        margin-left: 12px;
+        margin-top: 40px;
+        cursor: pointer;
+    }
+}
+.reg_form_buttons {
+	margin-top: 18px;
+}
+
+.error_message {
+    @include font(13px, 500, 19px);
+    color: $error;
+    margin-left: 8px;
+    margin-top: -24px;
+    width: 156px;
+    height: 19px;
+}
+
+.error {
+    background: url('../../../assets/images/error.svg') right 16px center
+        no-repeat;
+    border: 1px solid $error;
+    &:focus {
+        border: 1px solid $error;
+    }
+}
+
+.captcha_signup {
+    position: absolute;
+	top: 835px;
+	left: 340px;
+}

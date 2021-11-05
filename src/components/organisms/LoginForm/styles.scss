@@ -23,15 +23,12 @@
 		margin-top: 16px;
 	}
 }
+.captcha_login {
+	position: absolute;
+	top: 696px;
+	left: 340px;
+}
 
 @media only screen and (max-width: 375px) {
-	form {
-		margin-left: 14px;
-		// margin-top: 71px;
-
-		.input_field {
-			width: 348px;
-			height: 48px;
-		}
-	}
+	
 }

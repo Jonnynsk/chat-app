@@ -4,7 +4,7 @@ import { Redirect, Route, Switch } from 'react-router'
 import Login from '../pages/Login'
 import Chat from '../pages/Chat'
 import { SCREENS } from './endpoints'
-import Registration from './../pages/Registration'
+import Registration from '../pages/SignUp'
 
 const Routes: FC = () => {
 	return (

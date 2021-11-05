@@ -1,43 +1,45 @@
-import { FC, useState } from 'react'
+import { FC } from 'react'
+import { useStore } from 'effector-react'
 
 import './styles.scss'
 
 import Attach from '../../atoms/Attach'
 import SendMessage from './../../atoms/SendMessage/index'
-import { Controller, useForm } from 'react-hook-form'
+import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import Input from '../../atoms/Input'
+import { MessagesProps } from '../../../models/MessagesProps'
+import $store, { addNewMessage, sendNewMessage } from '../../../store/Messages'
 
 const MessageInput: FC = () => {
-	const [messages, setMessages] = useState([{ id: 1, value: 'Hello' }])
-	const [value, setValue] = useState<string>('')
-
-	const sendNewMessage = (e: React.MouseEvent<HTMLButtonElement>) => {
-		e.preventDefault()
-		// if (value) return
-		const newMessage = { value, id: Date.now() }
-		setMessages([...messages, newMessage])
-		setValue('')
+	const { control, handleSubmit } = useForm()
+	const inputSubmit: SubmitHandler<MessagesProps> = data => {
+		console.log(data)
 	}
 
-	const { control } = useForm()
+	const store = useStore($store)
 
 	return (
-		<div className='form_message'>
+		<form onSubmit={handleSubmit(inputSubmit)} className='form_message'>
 			<Attach />
 			<Controller
 				control={control}
 				name='message'
-				render={({ field: { onChange } }) => (
+				render={({}) => (
 					<Input
-						onChange={onChange}
+						// onChange={onChange}
+						// onChange={(e) => sendNewMessage(e.target.value)}
+						onChange={(e: React.ChangeEvent<HTMLInputElement>) =>
+							sendNewMessage(e.currentTarget.value)
+						}
+						value={store.newMessage}
 						className='message_input'
 						type='text'
 						placeholder='Write something...'
 					/>
 				)}
 			/>
-			<SendMessage onClick={sendNewMessage} />
-		</div>
+			<SendMessage onClick={() => addNewMessage()} />
+		</form>
 	)
 }
 

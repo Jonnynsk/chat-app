@@ -4,7 +4,9 @@ interface InputProps {
 	type: 'text' | 'password'
 	placeholder: string
 	className: string
-	onChange: (...event: []) => void
+	// onChange: (...event: []) => void
+	onChange: (...event: any[]) => void
+	value?: string
 }
 
 const Input: FC<InputProps> = ({ type, placeholder, className, ...rest }) => {

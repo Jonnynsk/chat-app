@@ -11,6 +11,7 @@ import Button from '../../atoms/Button'
 import InputField from '../../molecules/InputField'
 import { DataProps } from '../../../models/DataProps'
 import update from '../../../assets/images/update.svg'
+import { login } from '../../../store/Login'
 
 const scheme = yup.object().shape({
 	login: yup.string().required('Something goes wrong'),
@@ -28,8 +29,10 @@ const LoginForm: FC = () => {
 	} = useForm<DataProps>({
 		resolver: yupResolver(scheme),
 	})
-	const formSubmit: SubmitHandler<DataProps> = data => {
+	const formSubmit: SubmitHandler<DataProps> = (data: DataProps) => {
+		login(data)
 		history.push('/chat')
+		console.log(data)
 	}
 
 	return (
@@ -95,6 +98,11 @@ const LoginForm: FC = () => {
 								className={classNames('input', 'input_security')}
 							/>
 						)}
+					/>
+					<img
+						src='http://109.194.37.212:93/api/auth/captcha'
+						alt='captcha'
+						className='captcha_login'
 					/>
 				</div>
 				<span className='reg_form_captcha_update'>

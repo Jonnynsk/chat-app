@@ -37,8 +37,7 @@ const customStyles = {
 
 const SelectItem: FC<SelectItemProps> = ({ placeholder, labelName }) => {
 	const data = [
-		{ value: 'Your gender', label: 'Your gender' },
-		{ value: 'Male', label: 'Male', style: { color: 'red' } },
+		{ value: 'Male', label: 'Male' },
 		{ value: 'Female', label: 'Female' },
 	]
 	return (

@@ -3,13 +3,13 @@ import { FC } from 'react'
 import './styles.scss'
 
 import RightSide from '../../molecules/RightSide'
-import RegistrationPart from './../../organisms/RegistrationPart/index'
+import SignUpPart from '../../organisms/SignUpPart/index'
 
-const RegistrationPage: FC = () => {
+const SignUpPage: FC = () => {
 	return (
 		<div className='wrapper_reg'>
 			<div className='wrapper_reg_main'>
-				<RegistrationPart />
+				<SignUpPart />
 			</div>
 			<div className='wrapper_reg_right'>
 				<RightSide />
@@ -18,4 +18,4 @@ const RegistrationPage: FC = () => {
 	)
 }
 
-export default RegistrationPage
+export default SignUpPage
