@@ -12,14 +12,18 @@ import classNames from 'classnames'
 import Button from '../../atoms/Button'
 import SelectItem from '../../atoms/Select/index.'
 import update from '../../../assets/images/update.svg'
+import Captcha from '../../atoms/Captcha'
 
-const scheme = yup.object().shape({
+const schema = yup.object().shape({
 	login: yup.string().max(50).required('Something goes wrong'),
 	password: yup.string().required('Something goes wrong'),
-	password_confirm: yup.string().required('Something goes wrong'),
-	name: yup.string().required('Something goes wrong'),
+	password_confirm: yup
+		.string()
+		.oneOf([yup.ref('password'), null])
+		.required('Passwords must match'),
+	name: yup.string().max(50).required('Something goes wrong'),
 	gender_id: yup.number().required('Something goes wrong'),
-	captcha: yup.string().required('Something goes wrong'),
+	captcha: yup.string().required('Required'),
 })
 
 const SignUpForm: FC = () => {
@@ -29,14 +33,24 @@ const SignUpForm: FC = () => {
 		handleSubmit,
 		formState: { errors },
 	} = useForm<RegDataProps>({
-		resolver: yupResolver(scheme),
+		resolver: yupResolver(schema),
+		defaultValues: {
+			login: '',
+			password: '',
+			password_confirm: '',
+			name: '',
+			gender_id: 0,
+			captcha: '',
+		},
 	})
-	const formSubmit: SubmitHandler<RegDataProps> = data => {
+	const regSubmit: SubmitHandler<RegDataProps> = (data: RegDataProps) => {
+		console.log(data)
+		// console.log(gendersFx)
 		// history.push('/chat')
 	}
 
 	return (
-		<form onSubmit={handleSubmit(formSubmit)} className='reg_form'>
+		<form onSubmit={handleSubmit(regSubmit)} className='reg_form'>
 			<Controller
 				control={control}
 				name='login'
@@ -46,13 +60,13 @@ const SignUpForm: FC = () => {
 						labelName='Create user name'
 						placeholder='Input user name'
 						type='text'
+						error={errors.login?.message}
 						className={classNames('input', 'input_field', {
 							['error']: errors.login,
 						})}
 					/>
 				)}
 			/>
-			<div className='error_message'>{errors.login?.message}</div>
 			<Controller
 				control={control}
 				name='password'
@@ -62,13 +76,13 @@ const SignUpForm: FC = () => {
 						labelName='Create password'
 						placeholder='Create password'
 						type='password'
+						error={errors.password?.message}
 						className={classNames('input', 'input_field', {
 							['error']: errors.password,
 						})}
 					/>
 				)}
 			/>
-			<div className='error_message'>{errors.password?.message}</div>
 			<Controller
 				control={control}
 				name='password_confirm'
@@ -78,13 +92,13 @@ const SignUpForm: FC = () => {
 						labelName='Password confirmation'
 						placeholder='Password confirmation'
 						type='password'
+						error={errors.password_confirm?.message}
 						className={classNames('input', 'input_field', {
 							['error']: errors.password_confirm,
 						})}
 					/>
 				)}
 			/>
-			<div className='error_message'>{errors.password_confirm?.message}</div>
 			<Controller
 				control={control}
 				name='name'
@@ -94,14 +108,21 @@ const SignUpForm: FC = () => {
 						labelName='Nickname'
 						placeholder='Nickname'
 						type='text'
+						error={errors.name?.message}
 						className={classNames('input', 'input_field', {
 							['error']: errors.name,
 						})}
 					/>
 				)}
 			/>
-			<div className='error_message'>{errors.name?.message}</div>
-			<SelectItem labelName='Your gender' placeholder='Your gender' />
+			<SelectItem
+				name='gender_id'
+				labelName='Your gender'
+				placeholder='Your gender'
+				className={classNames('select', {
+					['error']: errors.gender_id,
+				})}
+			/>
 			<div className='reg_form_captcha'>
 				<Controller
 					control={control}
@@ -112,36 +133,16 @@ const SignUpForm: FC = () => {
 							labelName='Security code'
 							placeholder='Security code'
 							type='text'
+							error={errors.captcha?.message}
 							className={classNames('input', 'input_security', {
 								['error']: errors.captcha,
 							})}
 						/>
 					)}
 				/>
-				{/* <div className='error_message'>{errors.captcha?.message}</div> */}
-				<div className='reg_form_captcha__input'>
-					<Controller
-						control={control}
-						name='captcha'
-						render={({ field: { onChange } }) => (
-							<InputField
-								onChange={onChange}
-								labelName=' '
-								placeholder=' '
-								type='text'
-								className={classNames('input', 'input_security')}
-							/>
-						)}
-					/>
-					<img
-						src='http://109.194.37.212:93/api/auth/captcha'
-						alt='captcha'
-						className='captcha_signup'
-					/>
+				<div className='reg_form_captcha__img'>
+					<Captcha />
 				</div>
-				<span className='reg_form_captcha_update'>
-					<img src={update} />
-				</span>
 			</div>
 			<div className='reg_form_buttons'>
 				<Button type='submit' className={classNames('button', 'button_submit')}>

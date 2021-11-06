@@ -1,0 +1,18 @@
+@import '../../../assets/styles/index.scss';
+
+.captcha {
+    display: flex;
+    .captcha_img {
+        @include size(171px, 56px);
+        border: 1px solid $border-blue;
+        border-radius: 8px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+    .captcha_update {
+        margin-left: 12px;
+        margin-top: 16px;
+        cursor: pointer;
+    }
+}

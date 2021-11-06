@@ -16,15 +16,6 @@
 	margin-top: 18px;
 }
 
-.error_message {
-    @include font(13px, 500, 19px);
-    color: $error;
-    margin-left: 8px;
-    margin-top: -24px;
-    width: 156px;
-    height: 19px;
-}
-
 .error {
     background: url('../../../assets/images/error.svg') right 16px center
         no-repeat;
@@ -32,10 +23,4 @@
     &:focus {
         border: 1px solid $error;
     }
-}
-
-.captcha_signup {
-    position: absolute;
-	top: 835px;
-	left: 340px;
 }

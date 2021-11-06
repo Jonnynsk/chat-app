@@ -8,6 +8,8 @@ import { LabelProps } from './../../../models/LabelProps'
 
 interface SelectItemProps extends LabelProps {
 	placeholder: string
+	className: string
+	name: string
 }
 
 const customStyles = {
@@ -33,9 +35,17 @@ const customStyles = {
 		alignItems: 'center',
 		borderTop: '1px solid #F3F8FF',
 	}),
+	indicatorSeparator: () => ({
+		display: 'none',
+	}),
 }
 
-const SelectItem: FC<SelectItemProps> = ({ placeholder, labelName }) => {
+const SelectItem: FC<SelectItemProps> = ({
+	placeholder,
+	labelName,
+	name,
+	className,
+}) => {
 	const data = [
 		{ value: 'Male', label: 'Male' },
 		{ value: 'Female', label: 'Female' },
@@ -45,9 +55,10 @@ const SelectItem: FC<SelectItemProps> = ({ placeholder, labelName }) => {
 			<Label labelName={labelName} />
 			<Select
 				styles={customStyles}
-				className='select'
+				className={className}
 				placeholder={placeholder}
 				options={data}
+				name={name}
 			/>
 		</div>
 	)

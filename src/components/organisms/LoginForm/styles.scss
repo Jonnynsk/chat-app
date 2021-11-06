@@ -11,22 +11,15 @@
 			border: 1px solid $error;
 		}
 	}
-	.error_message {
-		@include font(13px, 500, 19px);
-		color: $error;
-		margin-left: 8px;
-		margin-top: -24px;
-		width: 156px;
-		height: 19px;
-	}
+	
 	.form_buttons {
 		margin-top: 16px;
 	}
 }
-.captcha_login {
-	position: absolute;
-	top: 696px;
-	left: 340px;
+
+.reg_form_captcha__img {
+	margin-left: 12px;
+	margin-top: 22px;
 }
 
 @media only screen and (max-width: 375px) {

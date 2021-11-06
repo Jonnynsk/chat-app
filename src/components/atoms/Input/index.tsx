@@ -7,6 +7,7 @@ interface InputProps {
 	// onChange: (...event: []) => void
 	onChange: (...event: any[]) => void
 	value?: string
+	error?: string
 }
 
 const Input: FC<InputProps> = ({ type, placeholder, className, ...rest }) => {

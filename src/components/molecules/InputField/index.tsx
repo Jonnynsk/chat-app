@@ -11,6 +11,7 @@ interface InputFieldProps extends LabelProps {
 	placeholder: string
 	className: string
 	onChange: (...event: []) => void
+	error?: string
 }
 
 const InputField: FC<InputFieldProps> = ({
@@ -18,6 +19,7 @@ const InputField: FC<InputFieldProps> = ({
 	type,
 	placeholder,
 	className,
+	error,
 	...rest
 }) => {
 	return (
@@ -28,7 +30,9 @@ const InputField: FC<InputFieldProps> = ({
 				type={type}
 				placeholder={placeholder}
 				className={className}
+				error={error}
 			/>
+			<div className='error_message'>{error}</div>
 		</div>
 	)
 }

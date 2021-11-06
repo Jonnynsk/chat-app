@@ -11,9 +11,10 @@ import Button from '../../atoms/Button'
 import InputField from '../../molecules/InputField'
 import { DataProps } from '../../../models/DataProps'
 import update from '../../../assets/images/update.svg'
-import { login } from '../../../store/Login'
+import { loginFx } from '../../../store/Login'
+import Captcha from '../../atoms/Captcha'
 
-const scheme = yup.object().shape({
+const schema = yup.object().shape({
 	login: yup.string().required('Something goes wrong'),
 	password: yup.string().required('Something goes wrong'),
 	captcha: yup.string().required('Something goes wrong'),
@@ -21,17 +22,21 @@ const scheme = yup.object().shape({
 
 const LoginForm: FC = () => {
 	const history = useHistory()
-
 	const {
 		control,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<DataProps>({
-		resolver: yupResolver(scheme),
+		defaultValues: {
+			login: '',
+			password: '',
+			captcha: '',
+		},
+		resolver: yupResolver(schema),
 	})
 	const formSubmit: SubmitHandler<DataProps> = (data: DataProps) => {
-		login(data)
-		history.push('/chat')
+		loginFx(data)
+		// history.push('/chat')
 		console.log(data)
 	}
 
@@ -46,13 +51,13 @@ const LoginForm: FC = () => {
 						labelName='User name'
 						placeholder='Input user name'
 						type='text'
+						error={errors.login?.message}
 						className={classNames('input', 'input_field', {
 							['error']: errors.password,
 						})}
 					/>
 				)}
 			/>
-			<div className='error_message'>{errors.login?.message}</div>
 			<Controller
 				control={control}
 				name='password'
@@ -62,13 +67,13 @@ const LoginForm: FC = () => {
 						labelName='Password'
 						placeholder='Input password'
 						type='password'
+						error={errors.password?.message}
 						className={classNames('input', 'input_field', {
 							['error']: errors.password,
 						})}
 					/>
 				)}
 			/>
-			<div className='error_message'>{errors.password?.message}</div>
 			<div className='reg_form_captcha'>
 				<Controller
 					control={control}
@@ -79,37 +84,17 @@ const LoginForm: FC = () => {
 							labelName='Security code'
 							placeholder='Security code'
 							type='text'
+							error={errors.captcha?.message}
 							className={classNames('input', 'input_security', {
 								['error']: errors.captcha,
 							})}
 						/>
 					)}
 				/>
-				<div className='reg_form_captcha__input'>
-					<Controller
-						control={control}
-						name='captcha'
-						render={({ field: { onChange } }) => (
-							<InputField
-								onChange={onChange}
-								labelName=' '
-								placeholder=' '
-								type='text'
-								className={classNames('input', 'input_security')}
-							/>
-						)}
-					/>
-					<img
-						src='http://109.194.37.212:93/api/auth/captcha'
-						alt='captcha'
-						className='captcha_login'
-					/>
+				<div className='reg_form_captcha__img'>
+					<Captcha />
 				</div>
-				<span className='reg_form_captcha_update'>
-					<img src={update} />
-				</span>
 			</div>
-			<div className='error_message'>{errors.captcha?.message}</div>
 			<div className='form_buttons'>
 				<Button type='submit' className={classNames('button', 'button_submit')}>
 					Log in

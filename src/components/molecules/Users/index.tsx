@@ -1,4 +1,5 @@
 import { FC } from 'react'
+import { NavLink } from 'react-router-dom'
 
 import { DialogUsersProps } from '../../../models/DialogUsersProps'
 
@@ -13,12 +14,9 @@ const Users: FC<UsersProps> = ({ users, onClick }) => {
 	return (
 		<div>
 			{users.map((user: { id: number; name: string; message: string }) => (
-				<PickUser
-					key={user.id}
-					name={user.name}
-					message={user.message}
-					onClick={onClick}
-				/>
+				<NavLink key={user.id} to={`/chat/${user.id}`}>
+					<PickUser name={user.name} message={user.message} onClick={onClick} />
+				</NavLink>
 			))}
 		</div>
 	)
