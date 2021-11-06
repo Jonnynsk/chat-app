@@ -45,8 +45,7 @@ const SignUpForm: FC = () => {
 	})
 	const regSubmit: SubmitHandler<RegDataProps> = (data: RegDataProps) => {
 		console.log(data)
-		// console.log(gendersFx)
-		// history.push('/chat')
+		history.push('/login')
 	}
 
 	return (

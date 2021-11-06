@@ -35,9 +35,8 @@ const LoginForm: FC = () => {
 		resolver: yupResolver(schema),
 	})
 	const formSubmit: SubmitHandler<DataProps> = (data: DataProps) => {
-		loginFx(data)
-		// history.push('/chat')
-		console.log(data)
+		// loginFx(data)
+		history.push('/chat')
 	}
 
 	return (
