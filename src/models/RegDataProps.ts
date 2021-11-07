@@ -3,6 +3,6 @@ export interface RegDataProps {
 	password: string
 	password_confirm: string
 	name: string
-	gender_id: number
+	gender_id: string
 	captcha: string
 }

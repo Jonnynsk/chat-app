@@ -13,6 +13,7 @@ import Button from '../../atoms/Button'
 import SelectItem from '../../atoms/Select/index.'
 import update from '../../../assets/images/update.svg'
 import Captcha from '../../atoms/Captcha'
+import { signupFx } from './../../../store/SignUp/index'
 
 const schema = yup.object().shape({
 	login: yup.string().max(50).required('Something goes wrong'),
@@ -39,12 +40,12 @@ const SignUpForm: FC = () => {
 			password: '',
 			password_confirm: '',
 			name: '',
-			gender_id: 0,
+			gender_id: '',
 			captcha: '',
 		},
 	})
 	const regSubmit: SubmitHandler<RegDataProps> = (data: RegDataProps) => {
-		console.log(data)
+		signupFx(data)
 		history.push('/login')
 	}
 
