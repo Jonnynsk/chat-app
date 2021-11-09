@@ -10,10 +10,8 @@ import './styles.scss'
 import Button from '../../atoms/Button'
 import InputField from '../../molecules/InputField'
 import { DataProps } from '../../../models/DataProps'
-import update from '../../../assets/images/update.svg'
 import { loginFx } from '../../../store/Login'
 import Captcha from '../../atoms/Captcha'
-// import { logFx } from './../../../store/Login/index';
 
 const schema = yup.object().shape({
 	login: yup.string().required('Something goes wrong'),
@@ -37,7 +35,6 @@ const LoginForm: FC = () => {
 	})
 	const formSubmit: SubmitHandler<DataProps> = (data: DataProps) => {
 		loginFx(data)
-		// logFx(data)
 		history.push('/chat')
 	}
 

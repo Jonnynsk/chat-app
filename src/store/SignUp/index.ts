@@ -1,12 +1,8 @@
 import axios from 'axios'
-import { createEffect } from 'effector'
+import { createEffect, createStore } from 'effector'
 
 import { instance } from '../instance'
 import { RegDataProps } from './../../models/RegDataProps'
-
-// axios.get('http://109.194.37.212:93/api/auth').then(response => {
-// 	console.log(response)
-// })
 
 export const signupFx = createEffect(async (data: RegDataProps) => {
 	const regData = new FormData()
@@ -24,8 +20,17 @@ export const signupFx = createEffect(async (data: RegDataProps) => {
 	return res.data
 })
 
-export const genders = axios
-	.get('http://109.194.37.212:93/api/auth')
-	.then(response => {
-		console.log(response.data)
-	})
+export const gendersFx = createEffect(async () => {
+	const res = await axios.get('http://109.194.37.212:93/api/auth')
+	return res.data
+})
+export const $genders = createStore({ genders: [] }).on(
+	gendersFx.done,
+	(
+		state,
+		payload: {
+			params: void
+			result: { genders: [] }
+		}
+	) => payload.result
+)

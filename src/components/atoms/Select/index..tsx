@@ -7,9 +7,11 @@ import Label from '../Label'
 import { LabelProps } from './../../../models/LabelProps'
 
 interface SelectItemProps extends LabelProps {
+	onChange: (...event: []) => void
 	placeholder: string
 	className: string
-	name: string
+	error?: string
+	options: { id: number; gender: string }[]
 }
 
 const customStyles = {
@@ -41,25 +43,30 @@ const customStyles = {
 }
 
 const SelectItem: FC<SelectItemProps> = ({
+	onChange,
 	placeholder,
 	labelName,
-	name,
 	className,
+	options,
+	error,
+	...rest
 }) => {
-	const data = [
-		{ value: 'Male', label: 'Male' },
-		{ value: 'Female', label: 'Female' },
-	]
+	const data = options.map(item => ({
+		value: item.id,
+		label: item.gender,
+	}))
 	return (
 		<div>
 			<Label labelName={labelName} />
 			<Select
+				onChange={onChange}
 				styles={customStyles}
 				className={className}
 				placeholder={placeholder}
 				options={data}
-				name={name}
+				{...rest}
 			/>
+			<div className='error_message'>{error}</div>
 		</div>
 	)
 }

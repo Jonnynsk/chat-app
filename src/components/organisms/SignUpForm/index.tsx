@@ -1,4 +1,4 @@
-import { FC } from 'react'
+import { FC, useEffect } from 'react'
 import { useForm, SubmitHandler, Controller } from 'react-hook-form'
 import { useHistory } from 'react-router'
 import * as yup from 'yup'
@@ -11,9 +11,9 @@ import InputField from '../../molecules/InputField'
 import classNames from 'classnames'
 import Button from '../../atoms/Button'
 import SelectItem from '../../atoms/Select/index.'
-import update from '../../../assets/images/update.svg'
 import Captcha from '../../atoms/Captcha'
-import { signupFx } from './../../../store/SignUp/index'
+import { gendersFx, $genders, signupFx } from '../../../store/SignUp'
+import { useStore } from 'effector-react'
 
 const schema = yup.object().shape({
 	login: yup.string().max(50).required('Something goes wrong'),
@@ -23,18 +23,18 @@ const schema = yup.object().shape({
 		.oneOf([yup.ref('password'), null])
 		.required('Passwords must match'),
 	name: yup.string().max(50).required('Something goes wrong'),
-	gender_id: yup.number().required('Something goes wrong'),
-	captcha: yup.string().required('Required'),
+	// gender_id: yup.string().required("Required"),
+	captcha: yup.string().length(5).required('Required'),
 })
 
 const SignUpForm: FC = () => {
 	const history = useHistory()
+	const genders = useStore($genders)
 	const {
 		control,
 		handleSubmit,
 		formState: { errors },
 	} = useForm<RegDataProps>({
-		resolver: yupResolver(schema),
 		defaultValues: {
 			login: '',
 			password: '',
@@ -43,9 +43,16 @@ const SignUpForm: FC = () => {
 			gender_id: '',
 			captcha: '',
 		},
+		resolver: yupResolver(schema),
 	})
+
+	useEffect(() => {
+		gendersFx()
+	}, [])
+
 	const regSubmit: SubmitHandler<RegDataProps> = (data: RegDataProps) => {
 		signupFx(data)
+		console.log(data)
 		history.push('/login')
 	}
 
@@ -115,13 +122,21 @@ const SignUpForm: FC = () => {
 					/>
 				)}
 			/>
-			<SelectItem
+			<Controller
+				control={control}
 				name='gender_id'
-				labelName='Your gender'
-				placeholder='Your gender'
-				className={classNames('select', {
-					['error']: errors.gender_id,
-				})}
+				render={({ field: { onChange } }) => (
+					<SelectItem
+						onChange={onChange}
+						labelName='Your gender'
+						placeholder='Your gender'
+						options={genders.genders}
+						error={errors.gender_id?.message}
+						className={classNames('select', {
+							// ['error']: errors.gender_id,
+						})}
+					/>
+				)}
 			/>
 			<div className='reg_form_captcha'>
 				<Controller
